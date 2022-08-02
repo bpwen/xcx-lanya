@@ -1,0 +1,7 @@
+<!--lanya.wxml-->
+<view class="container">
+    <button bindtap="onClick">蓝牙搜索</button>
+    {{msg}}
+    ------------------------------------------
+    {{ devices }}
+</view>

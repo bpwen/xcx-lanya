@@ -1,0 +1,9 @@
+/* pages/bluetoothconfig/bluetoothconfig.wxss */
+.log-list {
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx;
+}
+.log-item {
+  margin: 4rpx;
+}

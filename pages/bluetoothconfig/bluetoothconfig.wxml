@@ -1,0 +1,50 @@
+<view class="content">
+  <view class="weui-cells__title">WiFi信息(请先打开蓝牙，Android用户需打开GPS定位)</view>
+  <view class="weui-cells weui-cells_form">
+    <view class="weui-cell">
+      <view class="weui-cell__hd" style="margin: 10px;">
+        <label class="weui-label">名称</label>
+      </view>
+      <view class="weui-cell__bd">
+        <input value="{{ssid}}" bindinput='inputSSID' class="weui-input" type="text" placeholder="请输入WiFi名称"></input>
+      </view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__hd" style="margin: 10px;">
+        <label class="weui-label">密码</label>
+      </view>
+      <view class="weui-cell__bd">
+        <input value="{{pass}}" bindinput='inputPASS' class="weui-input" type="text" placeholder="请输入WiFi密码"></input>
+      </view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__hd" style="margin: 10px;">
+        <label class="weui-label">设备</label>
+      </view>
+      <view class="weui-cell__bd">
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{deviceArray}}">
+        <view class="picker" >
+          {{currDeviceID}}
+        </view>
+      </picker>
+      </view>
+    </view>
+  </view>
+  
+  <button bindtap="searchBleEvent" class='btn'>
+    <image src="/images/icon/BlueToothSearch.png" class='btn-img' />
+    <view>搜索蓝牙设备</view>
+  </button>
+
+  <button bindtap="bleConfigEvent" class='btn'>
+    <image src="/images/icon/BlueTooth.png" class='btn-img' />
+    <view>蓝牙设备配网</view>
+  </button>
+
+
+  <view class="container log-list" style="font-size: 10px; justify-content: left;">
+    <block wx:for="{{logs}}" wx:for-item="log" wx:key="index">
+      <text class="log-item">{{log}}</text>
+    </block>
+  </view>
+</view>
